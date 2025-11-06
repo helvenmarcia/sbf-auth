@@ -13,7 +13,7 @@ def register(request):
     """
     TODO:
     - Ambil "username" and "password" dari request.data
-    - Validate: not empty, password length >= 6
+    - Validate: not empty, password length >= X
     - Check if username already exists -> return 400 | Hint: Pakai User.object.filter(username=username).exist() sebagai condition
     - Create user pakai User.object.create_user()
     - Return 201 with: { "message": "registered"}
