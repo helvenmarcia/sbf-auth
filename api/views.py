@@ -12,12 +12,11 @@ User = get_user_model()
 def register(request):
     """
     TODO:
-    - Take "username" and "password" from request.data
+    - Ambil "username" and "password" dari request.data
     - Validate: not empty, password length >= 6
-    - Check if username already exists -> return 400
-    - Create user using create_user()
-    - Generate token with Token.objects.get_or_create(user=user)
-    - Return 201 with: { "message": "registered", "token": "<token>" }
+    - Check if username already exists -> return 400 | Hint: Pakai User.object.filter(username=username).exist() sebagai condition
+    - Create user pakai User.object.create_user()
+    - Return 201 with: { "message": "registered"}
     """
     return Response({"detail": "Not implemented"}, status=status.HTTP_501_NOT_IMPLEMENTED)
 
@@ -26,9 +25,9 @@ def register(request):
 def login(request):
     """
     TODO:
-    - Take username/password from request.data
-    - authenticate(...)
-    - If fail -> return 400
+    - Ambil username/password dari request.data
+    - Cek kredensial user | Hint: Pakai authenticate(...)
+    - If fail -> return invalid credentials 400
     - Else return { "token": <token> }
     """
     return Response({"detail": "Not implemented"}, status=status.HTTP_501_NOT_IMPLEMENTED)
